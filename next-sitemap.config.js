@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 module.exports = {
-    siteUrl: 'https://www.zenithpaws.dev', // Replace with your site URL
+    siteUrl: 'https://www.highlanderaccounting.com', // Replace with your site URL
     generateRobotsTxt: true,
     priority: 0.7, // Default priority for all pages
     changefreq: 'daily', // Default change frequency
