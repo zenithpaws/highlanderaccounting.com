@@ -20,6 +20,7 @@
 *.pem
 package-lock.json
 .vscode
+desktop.ini
 
 # debug
 npm-debug.log*

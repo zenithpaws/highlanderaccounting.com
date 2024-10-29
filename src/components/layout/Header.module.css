@@ -23,3 +23,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(var(--text-secondary), 0.25);
 }
+
+.name {
+    background: -webkit-linear-gradient(315deg, rgb(var(--text-accent-secondary)), rgb(var(--text-accent-primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

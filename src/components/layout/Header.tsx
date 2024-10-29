@@ -1,10 +1,9 @@
 'use client';
 
 import { Button, Header as MantineHeader, Menu, Modal, Text, TextInput } from '@mantine/core';
-import { HiCommandLine, HiOutlineCalculator, HiOutlineHome, HiOutlineInformationCircle, HiOutlinePaperAirplane, HiOutlineRectangleGroup, HiOutlineWrench, HiPaperAirplane, HiRectangleGroup } from 'react-icons/hi2';
+import { HiCommandLine, HiOutlineCalculator, HiOutlineHome, HiOutlineInformationCircle } from 'react-icons/hi2';
 import { useEffect, useState } from 'react';
 
-import { CgFormatSlash } from 'react-icons/cg';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
@@ -48,16 +47,6 @@ const commands: Command[] = [
     right: <></>,
     tag: 'goto navigate go to services /services',
   },
-  {
-    click: () => {
-      return;
-    },
-    icon: <HiOutlinePaperAirplane className='ml-4 -rotate-45 text-lg text-primary' />,
-    link: '/contact',
-    name: 'Get in touch',
-    right: <></>,
-    tag: 'goto navigate go to contact /contact',
-  },
 ];
 
 export const Header: React.FC<object> = (): JSX.Element => {
@@ -99,18 +88,10 @@ export const Header: React.FC<object> = (): JSX.Element => {
     window.addEventListener('keydown', (event) => {
       if ((document.activeElement as HTMLElement)?.isContentEditable) return;
 
-      if (event.ctrlKey && event.key === 'p') {
+      if (event.ctrlKey && event.key === 'm') {
         event.preventDefault();
 
         setOpened(true);
-      }
-
-      if (event.ctrlKey && event.key === 'd') {
-        event.preventDefault();
-
-        const root = document.querySelector(':root');
-        root?.setAttribute('data-theme', root?.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-        localStorage.setItem('theme', root?.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
       }
     });
   });
@@ -123,17 +104,15 @@ export const Header: React.FC<object> = (): JSX.Element => {
       <MantineHeader className='fixed left-0 top-0 z-50 mt-2 box-border flex h-12 w-screen items-center justify-between border-none bg-transparent sm:h-20 md:mt-0' height={72}>
         <div className='ml-2 flex items-center sm:ml-4'>
           <Link aria-label='Go to homepage' className='float-left ml-2 flex items-center sm:ml-4' href='/'>
-            <div className='float-left mr-2 rounded-md bg-accent-secondary'>
-              <CgFormatSlash className='text-2xl text-invert-secondary' />
-            </div>
             <p className='float-left hidden font-jakarta text-[19px] font-bold sm:block'>
-            <span className={`${styles.bolded}`}>Highlander Accounting</span>
+              <span className='text-accent-primary'>Highlander</span>
+              <span className='text-primary'> Accounting</span>
             </p>
           </Link>
 
           <Link className='float-left ml-8' href='/about'>
             <p className='float-left font-jakarta text-sm font-semibold'>
-            <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>About</span>
+              <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>About</span>
             </p>
           </Link>
 
@@ -142,14 +121,6 @@ export const Header: React.FC<object> = (): JSX.Element => {
           <Link className='float-left' href='/services'>
             <p className='float-left font-jakarta text-sm font-semibold'>
               <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>Services</span>
-            </p>
-          </Link>
-
-          <div className='mx-3 size-[3px] rounded-[50%] bg-[rgb(var(--text-secondary))]'></div>
-
-          <Link className='float-left' href='/contact'>
-            <p className='float-left font-jakarta text-sm font-semibold'>
-              <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>Contact</span>
             </p>
           </Link>
         </div>
@@ -169,13 +140,6 @@ export const Header: React.FC<object> = (): JSX.Element => {
               padding: '2rem',
             },
           }}>
-          <Menu.Dropdown className='p-2'>
-            <Menu.Item
-              className='rounded-lg bg-transparent font-jakarta font-semibold text-accent-secondary transition-colors hover:bg-[rgba(var(--background-accent-primary-hover),0.2)] hover:text-accent-secondary-hover'
-              icon={<HiPaperAirplane />}>
-              <Link href='/contact'>Contact</Link>
-            </Menu.Item>
-          </Menu.Dropdown>
         </Menu>
         <div className='flex items-center'>
           <Button
@@ -190,7 +154,7 @@ export const Header: React.FC<object> = (): JSX.Element => {
               <span className='ml-2 hidden text-sm font-medium lg:inline-block'>Navigation Menu</span>
               <span className='pointer-events-none ml-3 hidden rounded-sm border border-b-2 border-primary bg-primary p-1 py-[4px] font-mono text-3xs text-primary lg:inline-block'>CTRL</span>
               <span className='ml-1 hidden pb-1 text-3xs lg:inline-block'>+</span>
-              <span className='pointer-events-none ml-1 hidden rounded-sm border border-b-2 border-primary bg-primary p-1 py-[4px] font-mono text-3xs text-primary lg:inline-block'>P</span>
+              <span className='pointer-events-none ml-1 hidden rounded-sm border border-b-2 border-primary bg-primary p-1 py-[4px] font-mono text-3xs text-primary lg:inline-block'>M</span>
             </div>
           </Button>
         </div>
