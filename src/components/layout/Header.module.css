@@ -1,0 +1,25 @@
+.header::-webkit-scrollbar {
+    width: 6px;
+}
+
+.header::-webkit-scrollbar-thumb {
+    position: absolute;
+
+    background: var(--background-secondary);
+    margin-right: 1px;
+    border-radius: 2px;
+    border-right: 2px solid var(--background-primary);
+}
+
+.header::-webkit-scrollbar-track-piece {
+    margin-right: 1px;
+}
+
+.bolded {
+    font-weight: 500;
+    color: rgb(var(--text-primary));
+    
+    background: -webkit-linear-gradient(225deg, rgb(var(--text-accent-secondary)), rgb(var(--text-accent-primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(var(--text-secondary), 0.25);
+}
