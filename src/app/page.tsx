@@ -62,8 +62,8 @@ export default function Home() {
               width='100%'
             />
           </div>
-        </div >
-      </main >
+        </div>
+      </main>
     </>
   );
 }
