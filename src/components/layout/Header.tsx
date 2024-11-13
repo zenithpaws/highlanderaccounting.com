@@ -25,7 +25,7 @@ const commands: Command[] = [
     link: '/',
     name: 'Home',
     right: <></>,
-    tag: 'goto navigate go to home /'
+    tag: 'goto navigate go to home /',
   },
   {
     click: () => {
@@ -139,8 +139,7 @@ export const Header: React.FC<object> = (): JSX.Element => {
               color: 'rgb(var(--text-primary))',
               padding: '2rem',
             },
-          }}>
-        </Menu>
+          }}></Menu>
         <div className='flex items-center'>
           <Button
             unstyled
