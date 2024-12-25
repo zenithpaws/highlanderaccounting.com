@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, Header as MantineHeader, Menu, Modal, Text, TextInput } from '@mantine/core';
-import { HiCommandLine, HiOutlineCalculator, HiOutlineHome, HiOutlineInformationCircle } from 'react-icons/hi2';
+import { HiCommandLine, HiOutlineCalculator, HiOutlineHome, HiOutlineInformationCircle, HiOutlinePaperAirplane } from 'react-icons/hi2';
 import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
@@ -46,6 +46,16 @@ const commands: Command[] = [
     name: 'My services',
     right: <></>,
     tag: 'goto navigate go to services /services',
+  },
+  {
+    click: () => {
+      return;
+    },
+    icon: <HiOutlinePaperAirplane className='ml-4 -rotate-45 text-lg text-primary' />,
+    link: 'https://www.encyro.com/highlanderaccounting',
+    name: 'Contact me',
+    right: <></>,
+    tag: 'goto navigate go to contact /contact',
   },
 ];
 
@@ -123,6 +133,14 @@ export const Header: React.FC<object> = (): JSX.Element => {
               <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>Services</span>
             </p>
           </Link>
+
+        <div className='mx-3 size-[3px] rounded-[50%] bg-[rgb(var(--text-secondary))]'></div>
+
+        <Link className='float-left' href='https://www.encyro.com/highlanderaccounting'>
+            <p className='float-left font-jakarta text-sm font-semibold'>
+              <span className='text-accent-secondary transition-colors hover:text-accent-secondary-hover'>Contact</span>
+            </p>
+          </Link>
         </div>
 
         <Menu
@@ -157,7 +175,7 @@ export const Header: React.FC<object> = (): JSX.Element => {
             </div>
           </Button>
         </div>
-      </MantineHeader>
+      </MantineHeader >
       <Modal
         centered
         styles={{
