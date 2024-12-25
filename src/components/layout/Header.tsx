@@ -175,7 +175,7 @@ export const Header: React.FC<object> = (): JSX.Element => {
             </div>
           </Button>
         </div>
-      </MantineHeader >
+      </MantineHeader>
       <Modal
         centered
         styles={{
