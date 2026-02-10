@@ -53,7 +53,7 @@
     "bottleneck": "^2.19.5",
     "dayjs": "^1.11.7",
     "embla-carousel-react": "^7.1.0",
-    "eslint": "8.36.0",
+    "eslint": "9.26.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.8.0",
